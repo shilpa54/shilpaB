@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b114d8de0c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="row">
+    {% for i,j,l,m in mylist %}
+
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+            <img src="/static/nonveg/{{i}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{j}}</h5>
+                <p class="card-text">{{l}}</p>
+
+                <a href="http://127.0.0.1:8000/cookingapp/nonedit/{{m}}" class="btn btn-primary">edit</a>
+                <a href="http://127.0.0.1:8000/cookingapp/nondelete/{{m}}" class="btn btn-danger">delete</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
